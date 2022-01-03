@@ -1,0 +1,18 @@
+ static String solve(int N) {
+        // Your code goes here
+        int count=0;
+        
+        for(int i=2;i*i<=N;i++){
+            if(N%i==0){
+                count++;
+                break;
+            }
+        }
+
+        if(count==0){
+            return "No";
+        }
+        else{
+            return "Yes";
+        }
+    }
