@@ -1,0 +1,34 @@
+//palindrome integer LEETCODE
+
+class Solution {
+    public static int nod(int n){
+        int dig=n,cnt=0;
+        while(dig!=0){
+            dig=dig/10;
+            cnt++;
+        }
+        return cnt;
+    }
+    public boolean isPalindrome(int x) {
+        
+        if (x<0 || x==Integer.MAX_VALUE){return false;}
+        if(x/10==0){return true;}
+        else if(x%10==0){
+            return false;
+        }
+        else{
+       // int m=Integer.MAX_VALUE;
+           int count=nod(x);
+            int no=x;
+            int rev=0,p=(int)Math.pow(10,count-1);
+            while(no!=0){
+                int r=no%10;
+                rev+=r*p;
+                p/=10;
+                no=no/10;
+                
+            }
+            return (rev==x? true:false);
+        }
+    }
+}
