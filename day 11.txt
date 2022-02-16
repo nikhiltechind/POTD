@@ -18,7 +18,7 @@ class Solution {
                 l=m+1;
             }
         }
-        if( letters[l]<=target){l=0;}
-        return letters[l];
+        
+        return letters[l % letters.length];
     }
 }
